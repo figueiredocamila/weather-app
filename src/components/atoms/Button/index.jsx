@@ -4,7 +4,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { StyledSearchButton, StyledCityButton, StyledIconButton } from './style';
 
 const Button = props => {
-  
   return (
     <>
       {props.type === 'search' && <StyledSearchButton onClick={() => props.onclick()}>Search</StyledSearchButton>}
