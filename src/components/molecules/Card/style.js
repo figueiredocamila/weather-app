@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-  width: 85%;
-  height: 200px;
+  width: 100vw;
+  height: 100vh;
   border-radius: 4px;
   border: 1px solid grey;
   background-color: #90b8cf;
   padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
   
   .title {
     font-size: 1.7em;
