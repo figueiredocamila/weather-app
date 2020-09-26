@@ -1,14 +1,11 @@
 import React from 'react';
-import Button from './components/atoms/Button'
+import Card from './components/molecules/Card'
 
 function App() {
   const teste = () => console.log('camila')
   return (
     <div className="App">
-      <Button type="search" onclick={teste} />
-      <Button type="city" text="Cidade" onclick={teste} />
-      <Button type="icon" onclick={teste} />
-
+      <Card city='Rio de Janeiro' high='40' low='32' closeCard={teste} />
     </div>
   );
 }
