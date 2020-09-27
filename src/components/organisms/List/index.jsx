@@ -1,9 +1,9 @@
 import React, {useReducer} from 'react';
 import Button from '../../atoms/Button'
 import Card from '../../molecules/Card'
-import { StyledList } from './style';
+import { StyledList, NotFoundMsg } from './style';
 
-const List = props => {
+const List = ({cities}) => {
 
   const initialState = {
     selectedCity: undefined, 
@@ -37,21 +37,23 @@ const List = props => {
   
   return (
     <>
-    <StyledList>
-      {props.cities.map(city => <Button key={city.id} type="city" text={city.name} showMoreInfo={() => {
-        dispatch({type: 'toogleModal'});
-        dispatch({type: 'setSelectedCity', city})
-      }}/>)}
-    </StyledList>
-    {state.isCardOpen && <Card 
-      city={state.selectedCity.name} 
-      high={state.selectedCity.main.temp_max}
-      low={state.selectedCity.main.temp_min}
-      closeCard={() => {
-        dispatch({type: 'toogleModal'});
-        dispatch({type: 'clearSelectedCity'})
-      }}
-    />}
+      {cities.length === 0 && <NotFoundMsg>Nearby cities not found, try another location.</NotFoundMsg>}
+      {cities.length > 0 && <StyledList>
+        {cities.map(city => <Button key={city.id} type="city" text={city.name} showMoreInfo={() => {
+          dispatch({type: 'toogleModal'});
+          dispatch({type: 'setSelectedCity', city})
+        }}/>)}
+      </StyledList>}
+      
+      {state.isCardOpen && <Card 
+        city={state.selectedCity.name} 
+        high={state.selectedCity.main.temp_max}
+        low={state.selectedCity.main.temp_min}
+        closeCard={() => {
+          dispatch({type: 'toogleModal'});
+          dispatch({type: 'clearSelectedCity'})
+        }}
+      />}
     </>
   )
 }
