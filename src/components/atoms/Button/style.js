@@ -34,7 +34,7 @@ export const StyledCityButton = styled.button`
   color: grey;
   border: none;
   border-radius: 5px;
-  margin: 0.5em auto;
+  margin: 0.5em;
   text-align: left;
   cursor: pointer;
   box-shadow: 1px 1px 2px 0px #dedede;
@@ -42,6 +42,14 @@ export const StyledCityButton = styled.button`
 
   &:hover {
     box-shadow: 1px 1px 3px 1px #dedede;
+  }
+
+  @media (min-width: 768px) {
+    width: calc(50% - 1em);
+  }
+
+  @media (min-width: 1024px) {
+    width: calc((100% / 3) - 1em);
   }
 `
 
