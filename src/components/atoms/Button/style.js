@@ -1,29 +1,61 @@
 import styled from 'styled-components';
 
 export const StyledSearchButton = styled.button`
-  width: 100%;
-  height: 40px;
-  border-radius: 50px;
-  border: 1px solid white;
-  font-size: 1.5em;
-  color: white;
-  background-color: grey;
+  width: 40%;
+  display: block;
+  padding: 0.7em;
+  margin: 0.5em auto;
+  border: none;
+  border-radius: 0.5em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #34c240;
+  text-align: center;
+  cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 20%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 10%;
+  }
 `
 
 export const StyledCityButton = styled.button`
-  width: 100%;
+  width: 95%;
+  display: block;
   height: 60px;
-  border-radius: 4px;
-  border: 1px solid grey;
-  font-size: 2em;
+  border: none;
+  appearance: none;
+  background-color: #fff;
+  font-size: 1.2em;
   color: grey;
-  text-align: justify;
-  background-color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 0.5em;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 1px 1px 2px 0px #dedede;
+  transition: .2s ease all;
+
+  &:hover {
+    box-shadow: 1px 1px 3px 1px #dedede;
+  }
+
+  @media (min-width: 768px) {
+    width: calc(50% - 1em);
+  }
+
+  @media (min-width: 1024px) {
+    width: calc((100% / 3) - 1em);
+  }
 `
 
 export const StyledIconButton = styled.button`
-width: 30px;
-height: 30px;
-border: none;
-background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
 `

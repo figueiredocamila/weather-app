@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../../atoms/Button'
-import { StyledCard } from './style';
+import { StyledCard, Overlay } from './style';
 
 const Card = props => {
   return (
@@ -8,19 +8,20 @@ const Card = props => {
     <StyledCard>
       <div className="title">
         <span>{props.city}</span>
-        <Button type="icon" onclick={props.closeCard} />
+        <Button type="icon" close={props.closeCard} />
       </div>
       <div className="temp">
         <div>
-          <span>Max</span>
+          <span>Maximum</span>
           <span>{props.high}°C</span>
         </div>
         <div>
-          <span>Min</span>
-          <span>{props.low} °C</span>
+          <span>Minimum</span>
+          <span>{props.low}°C</span>
         </div> 
       </div>
     </StyledCard>
+    <Overlay onClick={props.closeCard}/>
     </>
   )
 }

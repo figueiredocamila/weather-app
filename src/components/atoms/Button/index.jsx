@@ -6,9 +6,9 @@ import { StyledSearchButton, StyledCityButton, StyledIconButton } from './style'
 const Button = props => {
   return (
     <>
-      {props.type === 'search' && <StyledSearchButton onClick={() => props.onclick()}>Search</StyledSearchButton>}
-      {props.type === 'city' && <StyledCityButton onClick={() => props.onclick()}>{props.text}</StyledCityButton>}
-      {props.type === 'icon' && <StyledIconButton onClick={() => props.onclick()}>
+      {props.type === 'search' && <StyledSearchButton onClick={() => props.search()}>Search</StyledSearchButton>}
+      {props.type === 'city' && <StyledCityButton onClick={() => props.showMoreInfo()}>{props.text}</StyledCityButton>}
+      {props.type === 'icon' && <StyledIconButton onClick={() => props.close()}>
         <FontAwesomeIcon icon={faTimes} size="2x" color="red" /> 
       </StyledIconButton>}
     </>

@@ -1,22 +1,28 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-  width: 100vw;
-  height: 100vh;
-  border-radius: 4px;
-  border: 1px solid grey;
-  background-color: #90b8cf;
+  width: 90%;
+  height: 150px;
   padding: 10px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: calc(50% - (150px / 2));
+  left: calc(50% - (90% / 2));
+  z-index: 1;
+  border: none;
+  appearance: none;
+  background-color: #fff;
+  color: grey;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px 0px #dedede;
+  transition: .2s ease all;
   
   .title {
-    font-size: 1.7em;
+    color: green;
+    font-size: 1.4em;
     font-weight: 500;
     text-align: center;
     position: relative;
-    color: white;
 
     button {
       position: absolute;
@@ -42,9 +48,32 @@ export const StyledCard = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1.5em;
-        color: white;
+        font-size: 1.1em;
       }
     }
   }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    left: calc(50% - (50% / 2));
+  }
+
+  @media (min-width: 1024px) {
+    width: 30%;
+    left: calc(50% - (30% / 2));
+  }
+
+  @media (min-width: 1366px) {
+    width: 20%;
+    left: calc(50% - (20% / 2));
+  }
+`
+
+export const Overlay = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, .5);
 `
