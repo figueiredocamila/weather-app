@@ -23,7 +23,7 @@ function App() {
   }, [])
 
   return (
-    <div >
+    <div>
       <Map setCurrentLocation={setCurrentLocation} center={currentLocation} />
       <Button onclick={() => getCities(currentLocation)} type="search" />
       <List cities={cities}></List>

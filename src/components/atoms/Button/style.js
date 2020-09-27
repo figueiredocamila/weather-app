@@ -1,13 +1,25 @@
 import styled from 'styled-components';
 
 export const StyledSearchButton = styled.button`
-  width: 100%;
-  height: 40px;
-  border-radius: 50px;
-  border: 1px solid white;
-  font-size: 1.5em;
-  color: white;
-  background-color: grey;
+  width: 60%;
+  display: block;
+  padding: 0.7em;
+  margin: 0.5em auto;
+  border: none;
+  border-radius: 5em;
+  font-size: 1em;
+  font-weight: bold;
+  color: #fff;
+  background-color: #34c240;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    width: 30%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 20%;
+  }
 `
 
 export const StyledCityButton = styled.button`
