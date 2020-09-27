@@ -38,7 +38,7 @@ const List = props => {
   return (
     <>
     <StyledList>
-      {props.cities.map(city => <Button key={city.id} type="city" text={city.name} onclick={() => {
+      {props.cities.map(city => <Button key={city.id} type="city" text={city.name} showMoreInfo={() => {
         dispatch({type: 'toogleModal'});
         dispatch({type: 'setSelectedCity', city})
       }}/>)}

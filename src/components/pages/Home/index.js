@@ -26,7 +26,7 @@ function App() {
   return (
     <WrapperStyle>
       <Map setCurrentLocation={setCurrentLocation} center={currentLocation} />
-      <Button onclick={() => getCities(currentLocation)} type="search" />
+      <Button search={() => getCities(currentLocation)} type="search" />
       <List cities={cities}></List>
     </WrapperStyle>
   );

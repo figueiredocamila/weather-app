@@ -54,8 +54,8 @@ export const StyledCityButton = styled.button`
 `
 
 export const StyledIconButton = styled.button`
-width: 30px;
-height: 30px;
-border: none;
-background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: transparent;
 `
