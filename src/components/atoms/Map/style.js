@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const MapWrapper = styled.div`
-  height: 100%;
-  width: 100%;
+  width: 100%;  
+  height: 50vh;
   
   & > div {
     position: relative !important;
