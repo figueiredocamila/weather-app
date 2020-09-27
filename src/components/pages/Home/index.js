@@ -3,6 +3,7 @@ import Map from '../../atoms/Map';
 import List from '../../organisms/List';
 import Button from '../../atoms/Button';
 import getWeatherInfo from '../../../services/WeatherApi';
+import { WrapperStyle } from './style';
 
 function App() {
   const [currentLocation, setCurrentLocation] = useState({ lat: 53.31, lng: -6.30 });
@@ -23,11 +24,11 @@ function App() {
   }, [])
 
   return (
-    <div>
+    <WrapperStyle>
       <Map setCurrentLocation={setCurrentLocation} center={currentLocation} />
       <Button onclick={() => getCities(currentLocation)} type="search" />
       <List cities={cities}></List>
-    </div>
+    </WrapperStyle>
   );
 }
 
