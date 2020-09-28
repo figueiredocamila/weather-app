@@ -23,7 +23,7 @@ const Card = ({city, closeCard, high, low}) => {
         <span>{`Today: ${city.weather[0].description}. The high will be ${city.main.temp_max}°C with a low of ${city.main.temp_min}°C.`}</span>
         <MainInfo>
           <span>Wind</span>
-          <span>{city.wind.speed}km/h</span>
+          <span>{city.wind.speed} km/h</span>
         </MainInfo>
         <MainInfo>
           <span>Feels like</span>

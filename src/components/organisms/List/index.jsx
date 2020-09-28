@@ -47,7 +47,9 @@ const List = ({cities}) => {
             dispatch({type: 'setSelectedCity', city})
           }}>
             {city.name}
-            <MoreDetails>Details</MoreDetails>
+            <MoreDetails>
+              {`${Math.round(city.main.temp)}°C`}
+            </MoreDetails>
           </Button>
         )}
       </StyledList>}

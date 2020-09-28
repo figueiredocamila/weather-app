@@ -24,7 +24,7 @@ export const NotFoundMsg = styled.span`
   color: grey;
 `
 
-export const MoreDetails = styled.small`
-  color: #34c240;
-  font-size: 0.7em;
+export const MoreDetails = styled.span`
+  color: grey;
+  font-size: 1.3em
 `
