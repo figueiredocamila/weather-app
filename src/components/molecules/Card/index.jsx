@@ -1,26 +1,43 @@
 import React from 'react';
 import Button from '../../atoms/Button'
-import { StyledCard, Overlay } from './style';
+import { StyledCard, Overlay, Title, Subtitle, HighLowInfo, Main, MainInfo } from './style';
 import PropTypes from 'prop-types';
 
 const Card = ({city, closeCard, high, low}) => {
   return (
     <>
     <StyledCard>
-      <div className="title">
-        <span>{city}</span>
+      {console.log(city)}
+      <Title>
+        <span>{city.name}</span>
         <Button type="icon" clickFn={closeCard} />
-      </div>
-      <div className="temp">
-        <div>
-          <span>Maximum</span>
-          <span>{high}°C</span>
-        </div>
-        <div>
-          <span>Minimum</span>
-          <span>{low}°C</span>
-        </div> 
-      </div>
+      </Title>
+      <Subtitle>
+        <span>{`${Math.round(city.main.temp)}°C`}</span>
+        <HighLowInfo>
+          <small>H:{city.main.temp_max}°C L:{city.main.temp_min}°C</small>
+          <small></small>
+        </HighLowInfo>
+      </Subtitle>
+      <Main>
+        <span>{`Today: ${city.weather[0].description}. The high will be ${city.main.temp_max}°C with a low of ${city.main.temp_min}°C.`}</span>
+        <MainInfo>
+          <span>Wind</span>
+          <span>{city.wind.speed} km/h</span>
+        </MainInfo>
+        <MainInfo>
+          <span>Feels like</span>
+          <span>{city.main.feels_like}°C</span>
+        </MainInfo>
+        <MainInfo>
+          <span>Humidity</span>
+          <span>{city.main.humidity}%</span>
+        </MainInfo>
+        <MainInfo>
+          <span>Pressure</span>
+          <span>{city.main.pressure} hPa</span>
+        </MainInfo>
+      </Main>
     </StyledCard>
     <Overlay onClick={closeCard}/>
     </>
@@ -28,17 +45,13 @@ const Card = ({city, closeCard, high, low}) => {
 }
 
 Card.propTypes = {
-  city: PropTypes.string, 
+  city: PropTypes.object, 
   closeCard: PropTypes.func, 
-  high: PropTypes.number, 
-  low: PropTypes.number
 }
 
 Card.defaultProps = {
-  city: "", 
+  city: {}, 
   closeCard: () => {}, 
-  high: 0,
-  low: 0
 }
 
 export default Card;

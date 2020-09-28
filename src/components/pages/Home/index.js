@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Map from '../../atoms/Map';
 import List from '../../organisms/List';
+import { Msg } from '../../organisms/List/style';
 import Button from '../../atoms/Button';
 import getWeatherInfo from '../../../services/WeatherApi';
 import { WrapperStyle } from './style';
@@ -33,7 +34,9 @@ const App = () => {
       <Button clickFn={() => getCities(currentLocation)} type="search">
         Search
       </Button>
-      {cities !== undefined && <List cities={cities}></List>}
+      {cities !== undefined
+        ? <List cities={cities} />
+        : <Msg>Click on Search or pick a place on the map and click on Search.</Msg>}
     </WrapperStyle>
   );
 }

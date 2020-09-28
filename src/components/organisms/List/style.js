@@ -15,16 +15,18 @@ export const StyledList = styled.div`
   }
 `
 
-export const NotFoundMsg = styled.span`
-  width: 100%;
+export const Msg = styled.div`
+  max-width: 100vw;
   height: 40vh;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding: 2em;
+  text-align: center;
   color: grey;
 `
 
-export const MoreDetails = styled.small`
-  color: #34c240;
-  font-size: 0.7em;
+export const MoreDetails = styled.span`
+  color: grey;
+  font-size: 1.3em
 `
