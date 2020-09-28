@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 import Button from '../../atoms/Button'
 import Card from '../../molecules/Card'
 import PropTypes from 'prop-types';
-import { StyledList, NotFoundMsg, MoreDetails } from './style';
+import { StyledList, Msg, MoreDetails } from './style';
 
 const List = ({cities}) => {
 
@@ -38,7 +38,7 @@ const List = ({cities}) => {
   
   return (
     <>
-      {cities.length === 0 && <NotFoundMsg>Nearby cities not found, try another location.</NotFoundMsg>}
+      {cities.length === 0 && <Msg>Nearby cities not found, try another location.</Msg>}
       {cities.length > 0 && 
       <StyledList>
         {cities.map(city => 
