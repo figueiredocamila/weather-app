@@ -53,9 +53,7 @@ const List = ({cities}) => {
       </StyledList>}
       
       {state.isCardOpen && <Card 
-        city={state.selectedCity.name} 
-        high={state.selectedCity.main.temp_max}
-        low={state.selectedCity.main.temp_min}
+        city={state.selectedCity}
         closeCard={() => {
           dispatch({type: 'toogleModal'});
           dispatch({type: 'clearSelectedCity'})
