@@ -25,8 +25,11 @@ export const StyledSearchButton = styled.button`
 
 export const StyledCityButton = styled.button`
   width: 95%;
-  display: block;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
   border: none;
   appearance: none;
   background-color: #fff;

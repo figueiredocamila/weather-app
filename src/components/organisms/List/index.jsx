@@ -2,7 +2,7 @@ import React, {useReducer} from 'react';
 import Button from '../../atoms/Button'
 import Card from '../../molecules/Card'
 import PropTypes from 'prop-types';
-import { StyledList, NotFoundMsg } from './style';
+import { StyledList, NotFoundMsg, MoreDetails } from './style';
 
 const List = ({cities}) => {
 
@@ -47,6 +47,7 @@ const List = ({cities}) => {
             dispatch({type: 'setSelectedCity', city})
           }}>
             {city.name}
+            <MoreDetails>Details</MoreDetails>
           </Button>
         )}
       </StyledList>}

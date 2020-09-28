@@ -23,3 +23,8 @@ export const NotFoundMsg = styled.span`
   align-items: center;
   color: grey;
 `
+
+export const MoreDetails = styled.small`
+  color: #34c240;
+  font-size: 0.7em;
+`

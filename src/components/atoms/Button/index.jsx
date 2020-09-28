@@ -8,7 +8,9 @@ const Button = ({type, clickFn, children}) => {
   return (
     <>
       {type === 'search' && <StyledSearchButton onClick={clickFn}>{children}</StyledSearchButton>}
-      {type === 'city' && <StyledCityButton onClick={clickFn}>{children}</StyledCityButton>}
+      {type === 'city' && <StyledCityButton onClick={clickFn}>
+        {children} 
+      </StyledCityButton>}
       {type === 'icon' && <StyledIconButton onClick={clickFn}>
         <FontAwesomeIcon icon={faTimes} size="2x" color="red" /> 
       </StyledIconButton>}
