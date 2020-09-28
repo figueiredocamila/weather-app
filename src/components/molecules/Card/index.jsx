@@ -1,29 +1,44 @@
 import React from 'react';
 import Button from '../../atoms/Button'
 import { StyledCard, Overlay } from './style';
+import PropTypes from 'prop-types';
 
-const Card = props => {
+const Card = ({city, closeCard, high, low}) => {
   return (
     <>
     <StyledCard>
       <div className="title">
-        <span>{props.city}</span>
-        <Button type="icon" close={props.closeCard} />
+        <span>{city}</span>
+        <Button type="icon" clickFn={closeCard} />
       </div>
       <div className="temp">
         <div>
           <span>Maximum</span>
-          <span>{props.high}°C</span>
+          <span>{high}°C</span>
         </div>
         <div>
           <span>Minimum</span>
-          <span>{props.low}°C</span>
+          <span>{low}°C</span>
         </div> 
       </div>
     </StyledCard>
-    <Overlay onClick={props.closeCard}/>
+    <Overlay onClick={closeCard}/>
     </>
   )
+}
+
+Card.propTypes = {
+  city: PropTypes.string, 
+  closeCard: PropTypes.func, 
+  high: PropTypes.number, 
+  low: PropTypes.number
+}
+
+Card.defaultProps = {
+  city: "", 
+  closeCard: () => {}, 
+  high: 0,
+  low: 0
 }
 
 export default Card;

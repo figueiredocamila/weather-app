@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapWrapper } from './style';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import PropTypes from 'prop-types';
 
 const mapStyles = {
   width: '100%',
@@ -8,27 +9,37 @@ const mapStyles = {
   position: 'relative !important'
 };
 
-const WeatherMap = props => {
+const WeatherMap = ({google, center, setCurrentLocation}) => {
   const mapCLicked = (mapProps, map, e) => {
-    props.setCurrentLocation({lat: e.latLng.lat(), lng: e.latLng.lng()})
+    setCurrentLocation({lat: e.latLng.lat(), lng: e.latLng.lng()})
   };
 
   return (
     <MapWrapper>    
       <Map
-        google={props.google}
+        google={google}
         zoom={4}
-        center={props.center}
+        center={center}
         style={mapStyles}
-        initialCenter={props.center}
+        initialCenter={center}
         onClick={mapCLicked}
         streetViewControl={false}
         fullscreenControl={false}
       >
-        <Marker position={props.center} />
+        <Marker position={center} />
       </Map>
     </MapWrapper>
   )
+}
+
+WeatherMap.propTypes = {
+  center: PropTypes.object,
+  setCurrentLocation: PropTypes.func
+}
+
+WeatherMap.defaultProps = {
+  center: {},
+  setCurrentLocation: () => {}
 }
 
 export default GoogleApiWrapper({

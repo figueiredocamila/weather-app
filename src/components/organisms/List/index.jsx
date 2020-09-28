@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import Button from '../../atoms/Button'
 import Card from '../../molecules/Card'
+import PropTypes from 'prop-types';
 import { StyledList, NotFoundMsg } from './style';
 
 const List = ({cities}) => {
@@ -38,11 +39,16 @@ const List = ({cities}) => {
   return (
     <>
       {cities.length === 0 && <NotFoundMsg>Nearby cities not found, try another location.</NotFoundMsg>}
-      {cities.length > 0 && <StyledList>
-        {cities.map(city => <Button key={city.id} type="city" text={city.name} showMoreInfo={() => {
-          dispatch({type: 'toogleModal'});
-          dispatch({type: 'setSelectedCity', city})
-        }}/>)}
+      {cities.length > 0 && 
+      <StyledList>
+        {cities.map(city => 
+          <Button key={city.id} type="city" clickFn={() => {
+            dispatch({type: 'toogleModal'});
+            dispatch({type: 'setSelectedCity', city})
+          }}>
+            {city.name}
+          </Button>
+        )}
       </StyledList>}
       
       {state.isCardOpen && <Card 
@@ -56,6 +62,14 @@ const List = ({cities}) => {
       />}
     </>
   )
+}
+
+List.propTypes = {
+  cities: PropTypes.array,
+}
+
+List.defaultProps = {
+  cities: [],
 }
 
 export default List;

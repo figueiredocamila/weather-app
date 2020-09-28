@@ -5,7 +5,7 @@ import Button from '../../atoms/Button';
 import getWeatherInfo from '../../../services/WeatherApi';
 import { WrapperStyle } from './style';
 
-function App() {
+const App = () => {
   const [currentLocation, setCurrentLocation] = useState({ lat: 53.31, lng: -6.30 });
   const [cities, setCities] = useState(undefined);
 
@@ -30,7 +30,9 @@ function App() {
   return (
     <WrapperStyle>
       <Map setCurrentLocation={setCurrentLocation} center={currentLocation} />
-      <Button search={() => getCities(currentLocation)} type="search" />
+      <Button clickFn={() => getCities(currentLocation)} type="search">
+        Search
+      </Button>
       {cities !== undefined && <List cities={cities}></List>}
     </WrapperStyle>
   );

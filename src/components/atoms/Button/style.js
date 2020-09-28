@@ -58,4 +58,5 @@ export const StyledIconButton = styled.button`
   height: 30px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 `
